@@ -1,0 +1,29 @@
+{
+    "name": "htech/roles-and-permissions",
+    "description": "Roles and Permissions integration for laravel development use by web developers on htechcorp",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "htech.web",
+            "email": "dev.web@htechcorp.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Htech\\RolesAndPermissions\\RolesAndPermissionsServiceProvider"
+            ],
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Htech\\RolesAndPermissions\\": "src"
+        }
+    },
+    "require": {
+        "spatie/laravel-permission": "^2.29"
+    }
+}
