@@ -22,8 +22,5 @@
         "psr-4": {
             "Htech\\RolesAndPermissions\\": "src"
         }
-    },
-    "require": {
-        "spatie/laravel-permission": "^2.29"
     }
 }
