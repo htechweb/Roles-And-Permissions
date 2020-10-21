@@ -1,37 +1,44 @@
 
+
 <h1 align="center">
 	<a href="https://www.htechcorp.net/" target="_blank"><img src="https://www.htechcorp.net/images/logo_small.png" alt="Htechcorp"></a>
-	<a href="https://www.dragonpay.ph/" target="_blank"><img src="https://www.dragonpay.ph/wp-content/uploads/2019/04/mini-logo.png" alt="Dragonpay"></a>
 	<br>
-	Htech x Dragonpay
+	Htech Roles And Permissions
 	<br>
 </h1>
 
 # Installation
 ```
-	composer require htech/dragonpay
+	composer require htech/roles-and-permissions
 ```
 # Usage
 No documentation yet. But we created some examples. Run in CLI.
 ```
-	php artisan vendor:publish --tag=dp_examples
+	php artisan vendor:publish 
 ```
-then run migration
-```
-	php artisan migrate
-```
+Then choose the number of the package
+then run migration and seeder
 
-Please don't forget to set merchant id and password in the env.
-```
-	DP_MERCHANT_ID ="MERCHANT ID" 
-	DP_PASSWORD ="MERCHANT SECRET KEY"
-```
-You may also try examples  <a href="http://dev72.htechcorp.net/zik/dragonpay/public/">here</a>
+You are free to modify the published files.
+For the routes. Just override it if you want to modify. Here are the list of the routes.
 
+```
+	Route::get('roles-and-permissions', 'RolesAndPermissionsController@index');
+    
+    Route::post('roles-and-permissions/add-role', 'RolesAndPermissionsController@addRole');
+    Route::post('roles-and-permissions/edit-role', 'RolesAndPermissionsController@editRole');
+    Route::get('roles-and-permissions/roles/delete/{role_id}', 'RolesAndPermissionsController@deleteRole');
+   
+    Route::post('roles-and-permissions/add-permission', 'RolesAndPermissionsController@addPermission');
+    Route::post('roles-and-permissions/edit-permission', 'RolesAndPermissionsController@editPermission');
+    Route::get('roles-and-permissions/permissions/delete/{role_id}', 'RolesAndPermissionsController@deletePermission');
+
+    Route::post('roles-and-permissions/update-role-permissions/{role_id}', 'RolesAndPermissionsController@updateRolePermissions');
+```
 ### Troubleshooting
 - If you have problems in installing with lower versions of PHP. Try adding params `ignore-platform-reqs` in composer require
 ```
-	composer require htech/dragonpay --ignore-platform-reqs 
+	composer require htech/roles-and-permissions --ignore-platform-reqs 
 ```
 
 ### Changelog
