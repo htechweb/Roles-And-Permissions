@@ -15,7 +15,7 @@
         "laravel": {
             "providers": [
                 "Htech\\RolesAndPermissions\\RolesAndPermissionsServiceProvider"
-            ],
+            ]
         }
     },
     "autoload": {
